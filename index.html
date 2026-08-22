@@ -66,6 +66,17 @@
       display: none;
       margin-top: -40px;
     }
+
+    .history-question-title{
+      font-size: 1rem;
+    }
+    .history-question{
+      margin-top: 10vh;
+      display: none;
+    }
+    .history-question-explanation{
+      text-decoration:underline;
+    }
     footer {
       display: flex;
       justify-content: center;
@@ -411,6 +422,23 @@
         their attitudes and behaviors towards non-human animals, because
         speciesism is not different from racism.
       </div>
+
+      <div class="history-question">
+         <h2 class="history-question-title">
+          On which side of world history do you think you would have stood 200 years ago, when human slavery was being abolished? On the side of the oppressors who owned slaves, or on the side of the victims and the abolitionists fighting for human rights?
+          </h2>
+         <span class="history-question-description">
+          In the first half of the 19th century, around 2% of the population supported the abolitionist movement.
+
+          In Great Britain, France, and South America, abolitionist movements also existed, but they too were minority groups, though over time they gained  influence. Today, a similar proportion of people are vegans, opposing the enslavement of animals.
+
+          Do you think you would have stood on the right side of history back then? 
+          <span class="history-question-explanation">
+          Your attitude toward the exploitation of animals today reveals which side you would have chosen just two centuries ago.
+          </span>
+        </span>
+      </div>
+
     </div>
     <footer>
       <span>
@@ -435,6 +463,7 @@
       const animalLiberation = document.querySelector(".animal-question");
       const liberationLogo = document.querySelector(".liberation-logo");
       const h1 = document.querySelector("h1");
+      const history = document.querySelector(".history-question");
       humanLiberationButton.addEventListener("click", (event) => {
         humanLiberation.style.opacity = 0;
         animalLiberation.style.display = "block";
@@ -444,7 +473,10 @@
           '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
         // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
         h1.textContent = "Your Vegan Fallacy Is:";
+        history.style = "display:block;"
       });
+      
+
     </script>
   </body>
 </html>
