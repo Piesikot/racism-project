@@ -10,20 +10,43 @@
       font-family: Montserrat;
       src: url(src/Montserrat-VariableFont_wght.ttf);
     }
+
     body {
       font-family: Montserrat, Arial, Helvetica, sans-serif;
     }
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      /* justify-content: space-between; */
       align-items: center;
       padding: 10px 10px 50px 10px;
     }
     .liberation-logo img {
       width: 50px;
+      
     }
-    .language {
-      width: 80px;
+    #racism-title{
+      /* justify-content: center;
+      text-align: center;
+      align-items: center;
+      align-self: center; */
+    }
+    .language-box{
+      display: flex;
+      flex-direction: column;
+      /* border: solid red 3px; */
+      width: 4rem;
+
+      text-align: center;
+    }
+    .language-box img{
+      width: 3rem;
+    }
+    .lang-box_span{
+      /* text-align: center; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* WTF nie działa? - trzeba było ustwaić tex-align na .language-box */
     }
     h1 {
       text-align: center;
@@ -108,13 +131,30 @@
   </style>
   <body>
     <header>
-      <div class="liberation-logo">
-        <img src="src/human_liberation.png" alt="Human Lberation Symbol" />
+      <!-- hmm... i tym sposobem jaka jest najlepsza metoda  na tworzenie strony: czy dodawanie lang do jak najmniejszych elementów typu -->
+
+      <div lang="en" class="liberation-logo">
+        <img src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
       </div>
-      <h1 id="rasism-h1">Your Racism Fallacy Is:</h1>
-      <div class="language"></div>
+      <div lang="pl" class="liberation-logo">
+        <img src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
+        <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
+      </div>
+      <h1 lang="en" id="racism-title">Your Racism Fallacy Is:</h1>
+      <h1 lang="pl" id="racism-title">Twój błędny pogląd na temat szowinizmu:</h1>
+      <!-- <div lang="en" class="language-box">
+        <img class="lang-box_img" src="/src/en-to-pl.png" alt="flaga Polski">
+        <span class="lang-box_span">Język polski</span>
+      </div>
+      <div lang="pl" class="lang-box">
+        <div>
+          <img class="lang-box_img" src="/src/pl-to-en.png" alt="flaga Ameryki / Polski">
+        </div>
+        <span class="lang-box_span">Set english language</span>
+      </div> -->
     </header>
+
     <!-- Racism Fallacies -->
     <ol id="racism-fallacies">
       <li>
@@ -451,9 +491,24 @@
           Created by
           <a id="copyright-link" href="https://piesikot.co/">Piesikot</a>
         </div></span
-      >
+        >
     </footer>
     <script>
+   function setLang(lang) {
+      document.querySelectorAll('[lang="en"]').forEach(el => {
+        el.style.display = lang === 'en' ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('[lang="pl"]').forEach(el => {
+        el.style.display = lang === 'pl' ? 'block' : 'none';
+      });
+    }
+
+    // nie wiem, czy to w ogóle działa
+    const browserLang = navigator.language.startsWith("pl") ? "pl" : "en";
+    setLang(browserLang);
+    
+
       const humanLiberationButton = document.querySelector(".human_liberation");
       const humanLiberation = document.querySelector(".human-question");
       const racismFallacies = document.querySelector("#racism-fallacies");
@@ -462,7 +517,7 @@
         document.querySelector("animal_liberation");
       const animalLiberation = document.querySelector(".animal-question");
       const liberationLogo = document.querySelector(".liberation-logo");
-      const h1 = document.querySelector("h1");
+      const racismTitle = document.querySelector("#racism-title");
       const history = document.querySelector(".history-question");
       humanLiberationButton.addEventListener("click", (event) => {
         humanLiberation.style.opacity = 0;
@@ -472,11 +527,11 @@
         liberationLogo.innerHTML =
           '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
         // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
-        h1.textContent = "Your Vegan Fallacy Is:";
+        racismTitle.textContent = "Your Vegan Fallacy Is:";
         history.style = "display:block;"
       });
       
-
+      // setLang();
     </script>
   </body>
 </html>
