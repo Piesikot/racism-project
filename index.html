@@ -137,8 +137,22 @@
         <img src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
       </div>
-      <h1 id="rasism-h1">Your Racism Fallacy Is:</h1>
-      <div class="language"></div>
+      <div lang="pl" class="liberation-logo">
+        <img src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
+        <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
+      </div>
+      <h1 lang="en" id="racism-title">Your Racism Fallacy Is:</h1>
+      <h1 lang="pl" id="racism-title">Twój błędny pogląd na temat szowinizmu:</h1>
+      <!-- <div lang="en" class="language-box">
+        <img class="lang-box_img" src="/src/en-to-pl.png" alt="flaga Polski">
+        <span class="lang-box_span">Język polski</span>
+      </div>
+      <div lang="pl" class="lang-box">
+        <div>
+          <img class="lang-box_img" src="/src/pl-to-en.png" alt="flaga Ameryki / Polski">
+        </div>
+        <span class="lang-box_span">Set english language</span>
+      </div> -->
     </header>
 
     <!-- Racism Fallacies -->
@@ -503,7 +517,7 @@
         document.querySelector("animal_liberation");
       const animalLiberation = document.querySelector(".animal-question");
       const liberationLogo = document.querySelector(".liberation-logo");
-      const h1 = document.querySelector("h1");
+      const racismTitle = document.querySelector("#racism-title");
       const history = document.querySelector(".history-question");
       humanLiberationButton.addEventListener("click", (event) => {
         humanLiberation.style.opacity = 0;
@@ -513,7 +527,7 @@
         liberationLogo.innerHTML =
           '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
         // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
-        h1.textContent = "Your Vegan Fallacy Is:";
+        racismTitle.textContent = "Your Vegan Fallacy Is:";
         history.style = "display:block;"
       });
       
