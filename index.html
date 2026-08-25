@@ -18,11 +18,14 @@
     
     .liberation-logo img {
       width: 50px;
-      padding: 0.5rem;
+      padding: 0.20rem;
     }
     .language-button{
-      /* display: flex; */
-      /* flex-direction: column; */
+      display: flex;
+      flex-direction: column;
+       /* justify-content: center; */
+      align-items: center;
+
       width: 4rem;
       cursor: pointer;
       
@@ -31,6 +34,8 @@
       top:0;
       padding: 1rem 0.5rem;
       text-align: center;
+
+     
     }
     .language-button img{
       width: 3rem;
@@ -39,6 +44,7 @@
     .language-button__span{
       /* text-align: center; */
       font-size: 0.75rem;
+      
     }
     .language-button:hover .language-button__span{
       text-decoration: underline;
@@ -143,10 +149,11 @@
 
     <nav>
       <div class="language-button">
-        <img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski">
-        <span class="language-button__span">Ustaw język polski</span>
+        <img lang="en" class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski">
+        <img lang="pl" class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
+        <span lang="en" class="language-button__span">Ustaw język polski</span>
+        <span lang="pl" class="language-button__span">Set English language</span>
       </div>
-
     </nav>
 
     <header>
@@ -531,10 +538,10 @@
       langBtn.addEventListener('click', () => {
         if (currentLang === 'en') {
           currentLang = 'pl';
-          langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
+          // langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
         } else if (currentLang === 'pl'){
           currentLang = 'en';
-          langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
+          // langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
         }
 
       setLang(currentLang);
