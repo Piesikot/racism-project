@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,40 +15,46 @@
       font-family: Montserrat, Arial, Helvetica, sans-serif;
       line-height: 1.5;
     }
-
-    .topbar{
-      display: flex;
-      justify-content: space-between;
-    }
-
-    header {
-      text-align: center;
-    }
+    
     .liberation-logo img {
       width: 50px;
+      padding: 0.5rem;
     }
-    .language-box{
-      display: flex;
-      flex-direction: column;
-      /* border: solid red 3px; */
+    .language-button{
+      /* display: flex; */
+      /* flex-direction: column; */
       width: 4rem;
-
-      /* text-align: center; */
-      align-items: flex-start;
-    }
-
-    .language-box img{
-      width: 3rem;
-    }
-    .lang-box_span{
-      /* text-align: center; */
-      /* justify-content: center; */
-      /* align-items: center; */
-      /* WTF nie działa? - trzeba było ustwaić tex-align na .language-box */
-    }
-    h1 {
+      cursor: pointer;
+      
+      position: absolute;
+      right: 0;
+      top:0;
+      padding: 1rem 0.5rem;
       text-align: center;
-      padding: 20px;
+
+    }
+    .language-button img{
+      width: 3rem;
+      border: 1px solid #000;
+    }
+    .language-button__span{
+      /* text-align: center; */
+      font-size: 0.75rem;
+    }
+    .language-button:hover .language-button__span{
+      text-decoration: underline;
+    }
+    .language-button__span:hover{
+    text-decoration: underline;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+    .racism-title{
+      text-align: center;
+      padding: 5rem 0 1rem 0;
+      /* color: yellowgreen; */
     }
     #vegan-h1,
     #excuse-h1 {
@@ -129,32 +135,33 @@
   <body>
       <!-- hmm... i tym sposobem jaka jest najlepsza metoda  na tworzenie strony: czy dodawanie lang do jak najmniejszych elementów typu -->
 
-    <nav class="topbar">
-      
-      <div lang="en" class="liberation-logo">
-        <img src="src/human_liberation.png" alt="the raised fist symbol" />
+      <div class="liberation-logo">
+        <img lang="en" src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
       </div>
-      <div lang="pl" class="liberation-logo">
-        <img src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
+      <div  class="liberation-logo">
+        <img lang="pl" src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
         <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
       </div>
-<!--       
-      <div lang="en" class="language-box">
-        <img class="lang-box_img" src="/src/en-to-pl.png" alt="flaga Polski">
-        <span class="lang-box_span">Ustaw Język polski</span>
+
+    <nav>
+      <div class="language-button">
+        <img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski">
+        <span class="language-button__span">Ustaw język polski</span>
       </div>
-      <div lang="pl" class="lang-box">
-        <div>
-          <img class="lang-box_img" src="/src/pl-to-en.png" alt="flaga Ameryki / Polski">
-        </div>
-        <span class="lang-box_span">Set english language</span>
+
+      <!-- language-button przygotowany pod innerHTML -->
+      <!-- <div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw Język polski</span></div> -->
+
+      <!-- <div class="language-button">
+        <img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
+        <span class="language-button__span">Set english language</span>
       </div> -->
     </nav>
 
     <header>
-      <h1 lang="en" id="racism-title">Your Racism Fallacy Is:</h1>
-      <h1 lang="pl" id="racism-title">Twój błędny pogląd na temat szowinizmu:</h1>
+      <h1 lang="en" class="racism-title">Your racism fallacy:</h1>
+      <h1 lang="pl" class="racism-title">Twój błędny pogląd na temat szowinizmu:</h1>
     </header>
 
     <!-- Racism Fallacies -->
@@ -495,21 +502,56 @@
         </div></span
         >
     </footer>
+
     <script>
-   function setLang(lang) {
-      document.querySelectorAll('[lang="en"]').forEach(el => {
-        el.style.display = lang === 'en' ? 'block' : 'none';
+      // działa, i co najciekawsze bez tego wyświetlają się dwie wersje językowe na raz, ponadto nie wiem, jak będzie się sprawdzać to w przypadku ustawionych innych języków przeglądarki niż en
+      // const browserLang = navigator.language.startsWith("pl") ? "pl" : "en";
+      // let currentLang = browserLang;   
+
+      //let currentLang = 'en';
+      //setLang(currentLang); 
+
+      let currentLang = 'en'; 
+      
+      function setLang(lang) {
+        const enElements = document.querySelectorAll('[lang="en"]');
+        const plElements = document.querySelectorAll('[lang="pl"]');
+
+        if (lang === 'en') {
+          enElements.forEach(element => {
+            element.style.display = 'block';
+          });
+          plElements.forEach(element => {
+            element.style.display = 'none';
+          });
+        } else if (lang === 'pl') {
+          enElements.forEach(element => {
+            element.style.display = 'none';
+          });
+          plElements.forEach(element => {
+            element.style.display = 'block';
+          });
+        }
+      }
+      
+      setLang(currentLang);
+
+      const langBtn = document.querySelector('.language-button');
+
+      langBtn.addEventListener('click', () => {
+        if (currentLang === 'en') {
+          currentLang = 'pl';
+          langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
+        } else if (currentLang === 'pl'){
+          currentLang = 'en';
+          langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
+        }
+
+      setLang(currentLang);
       });
 
-      document.querySelectorAll('[lang="pl"]').forEach(el => {
-        el.style.display = lang === 'pl' ? 'block' : 'none';
-      });
-    }
 
-    // nie wiem, czy to w ogóle działa
-    const browserLang = navigator.language.startsWith("pl") ? "pl" : "en";
-    setLang(browserLang);
-    
+
 
       const humanLiberationButton = document.querySelector(".human_liberation");
       const humanLiberation = document.querySelector(".human-question");
@@ -519,7 +561,7 @@
         document.querySelector("animal_liberation");
       const animalLiberation = document.querySelector(".animal-question");
       const liberationLogo = document.querySelector(".liberation-logo");
-      const racismTitle = document.querySelector("#racism-title");
+      const racismTitle = document.querySelector(".racism-title");
       const history = document.querySelector(".history-question-container");
       humanLiberationButton.addEventListener("click", (event) => {
         humanLiberation.style.opacity = 0;
@@ -533,7 +575,7 @@
         history.style = "display:block;"
       });
       
-      // setLang();
+      // setLang(lang);
     </script>
   </body>
 </html>
