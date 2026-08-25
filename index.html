@@ -31,7 +31,6 @@
       top:0;
       padding: 1rem 0.5rem;
       text-align: center;
-
     }
     .language-button img{
       width: 3rem;
@@ -56,11 +55,11 @@
       padding: 5rem 0 1rem 0;
       /* color: yellowgreen; */
     }
-    #vegan-h1,
-    #excuse-h1 {
+    .vegan-h1,
+    .excuse-h1 {
       display: none;
     }
-    #veganism-fallacies {
+    .veganism-fallacies {
       display: none;
     }
     li {
@@ -109,11 +108,11 @@
       text-align: center;
       padding: 60px 0 0 0;
     }
-    #copyright {
+    .copyright {
       margin-top: 5px;
     }
-    #veganfallacy-link,
-    #copyright-link {
+    .veganfallacy-link,
+    .copyright-link {
       color: black;
     }
     @media screen and (max-width: 900px) {
@@ -133,8 +132,6 @@
     }
   </style>
   <body>
-      <!-- hmm... i tym sposobem jaka jest najlepsza metoda  na tworzenie strony: czy dodawanie lang do jak najmniejszych elementów typu -->
-
       <div class="liberation-logo">
         <img lang="en" src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
@@ -150,13 +147,6 @@
         <span class="language-button__span">Ustaw język polski</span>
       </div>
 
-      <!-- language-button przygotowany pod innerHTML -->
-      <!-- <div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw Język polski</span></div> -->
-
-      <!-- <div class="language-button">
-        <img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
-        <span class="language-button__span">Set english language</span>
-      </div> -->
     </nav>
 
     <header>
@@ -165,7 +155,7 @@
     </header>
 
     <!-- Racism Fallacies -->
-    <ol id="racism-fallacies">
+    <ol class="racism-fallacies">
       <li>
         <div class="fallacy-title">
           Other Races Are Not Intelligent Enough to Worry About
@@ -306,7 +296,7 @@
     </ol>
 
     <!-- Veganism Fallacies -->
-    <ol id="veganism-fallacies">
+    <ol class="veganism-fallacies">
       <li>
         <div class="fallacy-title">
           Other Species Are Not Intelligent Enough to Worry About
@@ -492,13 +482,13 @@
     <footer>
       <span>
         Website got inspiration from
-        <a id="veganfallacy-link" href="https://yourveganfallacyis.com"
+        <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
           >yourveganfallacyis.com</a
         >
         and some very nice people from all over the world ;)
-        <div id="copyright">
+        <div class="copyright">
           Created by
-          <a id="copyright-link" href="https://piesikot.co/">Piesikot</a>
+          <a class="copyright-link" href="https://piesikot.co/">Piesikot</a>
         </div></span
         >
     </footer>
@@ -555,8 +545,8 @@
 
       const humanLiberationButton = document.querySelector(".human_liberation");
       const humanLiberation = document.querySelector(".human-question");
-      const racismFallacies = document.querySelector("#racism-fallacies");
-      const veganismFallacies = document.querySelector("#veganism-fallacies");
+      const racismFallacies = document.querySelector(".racism-fallacies");
+      const veganismFallacies = document.querySelector(".veganism-fallacies");
       const animalLiberationButton =
         document.querySelector("animal_liberation");
       const animalLiberation = document.querySelector(".animal-question");
