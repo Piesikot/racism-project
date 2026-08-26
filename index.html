@@ -16,9 +16,12 @@
       line-height: 1.5;
     }
     
-    .liberation-logo img {
+    .human-liberation-logo img, .animal-liberation-logo img {
       width: 50px;
       padding: 0.20rem;
+    }
+    .animal-liberation-logo{
+      display: none;
     }
     .language-button{
       display: flex;
@@ -52,15 +55,19 @@
     .language-button__span:hover{
     text-decoration: underline;
     }
+
+
     header {
       text-align: center;
       padding-bottom: 3rem;
     }
-    .racism-header__title{
+    .racism-header__title, .speciesism-header__title{
       text-align: center;
       padding: 5rem 0 1rem 0;
       /* color: yellowgreen; */
     }
+
+
     .vegan-h1,
     .excuse-h1 {
       display: none;
@@ -82,6 +89,7 @@
     .question-container {
       padding: 50px 10px 50px 10px;
     }
+    /* 🟡 transitions do poprawki */
     .human-question,
     .animal-question {
       -webkit-transition: opacity 0.5s ease-in-out;
@@ -104,9 +112,22 @@
     }
     .history-question__title{
       font-size: 1rem;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -ms-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .history-question__description{
+      -webkit-transition: opacity 2s ease-in-out;
+      -moz-transition: opacity 2s ease-in-out;
+      -ms-transition: opacity 2s ease-in-out;
+      -o-transition: opacity 2s ease-in-out;
+      transition: opacity 2s ease-in-out;
     }
     .history-question__explanation{
       text-decoration:underline;
+
     }
     footer {
       display: flex;
@@ -138,12 +159,17 @@
     }
   </style>
   <body>
-      <div class="liberation-logo">
+      <div class="human-liberation-logo">
         <img lang="en" src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
-      </div>
-      <div  class="liberation-logo">
         <img lang="pl" src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
+        <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
+      </div>
+
+      <div class="animal-liberation-logo">
+        <img lang="en" src="src/animal_liberation.png" alt="the raised animal fist symbol" />
+        <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
+        <img lang="pl" src="src/animal_liberation.png" alt="symbol uniesionej łapy" />
         <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
       </div>
 
@@ -628,7 +654,7 @@
         consider them unethical and absurd, and you think that such type of
         reasoning should not be tolerated and applied to living beings,
         especially innocent ones? If so, click this button:
-        <button class="human_liberation">Human liberation</button>
+        <button class="human-liberation-button">Human liberation</button>
       </div>
       <div class="animal-question">
         Well, in fact, these arguments mirror the most commonly used arguments
@@ -653,6 +679,8 @@
           <!-- <span class="history-question__question">
             So which side will you choose now: <button class="animal_liberation">Animal liberation</button> or <button class="animal_liberation">Animal enslavement</button> ?
           </span> -->
+
+          <!-- Not being vegan is your personal choice and it's OK, if you support humane local farms like https://www.elwooddogmeat.com -->
         </span>
       </div>
 
@@ -718,27 +746,36 @@
       setLang(currentLang);
       });
 
-      const humanLiberationButton = document.querySelector(".human_liberation");
+
+      const humanLiberationButton = document.querySelector(".human-liberation-button")
       const humanLiberation = document.querySelector(".human-question");
       const racismFallacies = document.querySelector(".racism-fallacies");
       const veganismFallacies = document.querySelector(".veganism-fallacies");
-      const animalLiberationButton =
-        document.querySelector("animal_liberation");
-      const animalLiberation = document.querySelector(".animal-question");
-      const liberationLogo = document.querySelector(".liberation-logo");
-      
-      //⚠ 🔴⚠ 
-      //const racismTitle = document.querySelector(".racism-header__title");
 
       //?
+      const animalLiberationButton =
+        document.querySelector("animal_liberation");
+
+      const animalLiberation = document.querySelector(".animal-question");
+
+      const humanLiberationLogo = document.querySelector(".human-liberation-logo");
+      const animalLiberationLogo = document.querySelector(".animal-liberation-logo");
+
+      
+      //⚠ 🔴⚠ ?
+      // const racismTitle = document.querySelector(".racism-header__title");
+
       const racismHeader = document.querySelector(".racism-header");
       const speciesismHeader = document.querySelector(".speciesism-header");
 
       const history = document.querySelector(".history-question-container");
       humanLiberationButton.addEventListener("click", (event) => {     
-        
-        // 🔴
-        humanLiberation.style.opacity = 0;
+
+        humanLiberationLogo.display = "none";
+        animalLiberationLogo.display = "block";
+
+        // 🔴?
+        animalLiberation.style.display = "none";
         animalLiberation.style.display = "block";
 
         racismHeader.style.display = "none";
@@ -746,21 +783,22 @@
 
         racismFallacies.style.display = "none";
         veganismFallacies.style.display = "block";
-        
-        liberationLogo.innerHTML =
-          '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
-        // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
 
-        // //!🔴  DO POPRAWIENIA!
-        // if (currentLang === 'en') {
-        // racismTitle.textContent = "Speciesism is OK because:";
-        // } else if (currentLang === 'pl') {
-        // racismTitle.textContent = "Szowinizm gatunkowy jest OK ponieważ:"
-        // };
 
-        history.style = "display:block;"
+
+       // liberationLogo.innerHTML =
+       //   '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
+       // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
+
+        humanLiberation.style.display = "none";
+
+        history.style.display = "block";
+        //  /* 🟡 transitions do poprawki */
       });
       
+
+
+      //?
       // setLang(lang);
     </script>
   </body>
