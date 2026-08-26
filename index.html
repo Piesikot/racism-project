@@ -56,7 +56,7 @@
       text-align: center;
       padding-bottom: 3rem;
     }
-    .racism-title{
+    .racism-header__title{
       text-align: center;
       padding: 5rem 0 1rem 0;
       /* color: yellowgreen; */
@@ -65,7 +65,7 @@
     .excuse-h1 {
       display: none;
     }
-    .veganism-fallacies {
+    .veganism-fallacies, .speciesism-header {
       display: none;
     }
     li {
@@ -138,7 +138,6 @@
     }
   </style>
   <body>
-
       <div class="liberation-logo">
         <img lang="en" src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
@@ -157,9 +156,13 @@
       </div>
     </nav>
 
-    <header>
-      <h1 lang="en" class="racism-title">Racism is OK because:  </h1>
-      <h1 lang="pl" class="racism-title">Szowinizm jest OK ponieważ:</h1>
+    <header class="racism-header">
+      <h1 lang="en" class="racism-header__title">Racism is OK because:</h1>
+      <h1 lang="pl" class="racism-header__title">Szowinizm jest OK ponieważ:</h1>
+    </header>
+    <header class="speciesism-header">
+      <h1 lang="en" class="speciesism-header__title">Speciesism is OK because:</h1>
+      <h1 lang="pl" class="speciesism-header__title">Szowinizm gatunkowy jest OK ponieważ:</h1>
     </header>
 
     <!-- Racism Fallacies -->
@@ -723,23 +726,37 @@
         document.querySelector("animal_liberation");
       const animalLiberation = document.querySelector(".animal-question");
       const liberationLogo = document.querySelector(".liberation-logo");
-      const racismTitle = document.querySelector(".racism-title");
+      
+      //⚠ 🔴⚠ 
+      //const racismTitle = document.querySelector(".racism-header__title");
+
+      //?
+      const racismHeader = document.querySelector(".racism-header");
+      const speciesismHeader = document.querySelector(".speciesism-header");
+
       const history = document.querySelector(".history-question-container");
-      humanLiberationButton.addEventListener("click", (event) => {        
+      humanLiberationButton.addEventListener("click", (event) => {     
+        
+        // 🔴
         humanLiberation.style.opacity = 0;
         animalLiberation.style.display = "block";
+
+        racismHeader.style.display = "none";
+        speciesismHeader.style.display = "block";
+
         racismFallacies.style.display = "none";
         veganismFallacies.style.display = "block";
+        
         liberationLogo.innerHTML =
           '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
         // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
 
-        //!🔴  DO POPRAWIENIA!
-        if (currentLang === 'en') {
-        racismTitle.textContent = "Speciesism is OK because:";
-        } else if (currentLang === 'pl') {
-        racismTitle.textContent = "Szowinizm gatunkowy jest OK ponieważ:"
-        };
+        // //!🔴  DO POPRAWIENIA!
+        // if (currentLang === 'en') {
+        // racismTitle.textContent = "Speciesism is OK because:";
+        // } else if (currentLang === 'pl') {
+        // racismTitle.textContent = "Szowinizm gatunkowy jest OK ponieważ:"
+        // };
 
         history.style = "display:block;"
       });
