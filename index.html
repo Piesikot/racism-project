@@ -178,7 +178,7 @@
         <img lang="en" class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski">
         <img lang="pl" class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
         <span lang="en" class="language-button__span">Ustaw język polski</span>
-        <span lang="pl" class="language-button__span">Set English language</span>
+        <span lang="pl" class="language-button__span">Set english language</span>
       </div>
     </nav>
 
@@ -559,41 +559,85 @@
           nierozsądne jest oczekiwać, że każdy przestanie być szowinistą gatunkowym.
         </div>
       </li>
+      
       <li>
-        <div class="fallacy-title">Being Vegan Changes Nothing</div>
-        <div class="fallacy-description">
+        <!-- Vegan Fallacy 6. -->
+        <div lang="en" class="fallacy-title">
+          Being Vegan Changes Nothing
+        </div>
+        <div lang="en" class="fallacy-description">
           Not being a speciesist changes nothing because there will always be
-          other speciesist in the world, so what's the point?
+          other speciesists in the world, so what's the point?
+        </div>
+
+        <div lang="pl" class="fallacy-title">
+          Bycie Weganinem Nic Nie Zmienia
+        </div>
+        <div lang="pl" class="fallacy-description">
+          Nie bycie szowinistą gatunkowym niczego nie zmienia, ponieważ na świecie zawsze będą
+          inni szowiniści gatunkowi, więc jaki jest w tym sens?
         </div>
       </li>
+
       <li>
-        <div class="fallacy-title">
+        <!-- Vegan Fallacy 7. --> 
+        <!-- 🟡 do korrekty, żeby było konsekwentnie do Racism Fallacy -->
+        <div lang="en" class="fallacy-title">
           I Don't Have To Be Vegan To Love Animals
         </div>
-        <div class="fallacy-description">
+        <div lang="en" class="fallacy-description">
           I love animals enough to fulfill their needs while they're alive, but
           I also understand that sometimes they need to be killed to satisfy my
-          needs. So there is no conflict between loving animals and killing
-          them.
+          needs. So there is no conflict between loving animals and killing them.
+        </div>
+        <div lang="pl" class="fallacy-title">
+          Nie Muszę Być Weganinem, By Kochać Zwierzęta
+        </div>
+        <div lang="pl" class="fallacy-description">
+          Kocham zwierzęta na tyle, by zaspokajać ich potrzeby, gdy żyją, ale rozumiem
+          też, że czasem muszą zostać zabite, by zaspokoić moje potrzeby. Dlatego nie ma
+          konfliktu między kochaniem zwierząt a ich zabijaniem.
         </div>
       </li>
+
       <li>
-        <div class="fallacy-title">I Honor The Animals I Eat</div>
-        <div class="fallacy-description">
+        <!-- Vegan Fallacy 8. -->
+        <div lang="en" class="fallacy-title">
+          I Honor The Animals I Eat
+        </div>
+        <div lang="en" class="fallacy-description">
           I honor the animals I eat with my hunting and farming practices for
           their sacrifice.
         </div>
+        <div lang="pl" class="fallacy-title">
+          Oddaję Cześć Zwierzętom, Które Jem
+        </div>
+        <div lang="pl" class="fallacy-description">
+          Oddaję cześć zwierzętom, które jem, poprzez moje praktyki łowieckie i hodowlane,
+          w uznaniu ich „poświęcenia”.
+        </div>
       </li>
+
       <li>
-        <div class="fallacy-title">
+        <!-- Vegan Fallacy 9. -->
+        <div lang="en" class="fallacy-title">
           I Eat Animals Killed Only In A Humane Way
         </div>
-        <div class="fallacy-description">
+        <div lang="en" class="fallacy-description">
           It's important for animals to be treated well, so I only eat animals
           killed in a way that is free from suffering, and death is quick and
           humane.
         </div>
+
+        <div lang="pl" class="fallacy-title">
+          Jem Tylko Zwierzęta Zabite W Humanitarny Sposób
+        </div>
+        <div lang="pl" class="fallacy-description">
+          Ważne jest, by zwierzęta były dobrze traktowane, więc jem tylko te, które
+          zostały zabite bez cierpienia, szybko i „humanitarnie”.
+        </div>
       </li>
+
       <li>
         <div class="fallacy-title">My Species Is The Dominant Species</div>
         <div class="fallacy-description">
@@ -766,7 +810,6 @@
       setLang(currentLang);
       });
 
-
       const humanLiberationButton = document.querySelector(".human-liberation-button")
       const humanLiberation = document.querySelector(".human-question");
       const racismFallacies = document.querySelector(".racism-fallacies");
@@ -803,8 +846,6 @@
         racismFallacies.style.display = "none";
         veganismFallacies.style.display = "block";
 
-
-
        // liberationLogo.innerHTML =
        //   '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
        // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
@@ -814,8 +855,6 @@
         history.style.display = "block";
         //  /* 🟡 transitions do poprawki */
       });
-      
-
 
       //?
       // setLang(lang);
