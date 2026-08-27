@@ -862,6 +862,10 @@
       const languageButton = document.querySelector('.language-button');
 
       languageButton.addEventListener('click', () => {
+
+      //przeładowa nie strony, które ustawia język eng, który jest defaultowym językiem
+        //location.reload();
+
         if (currentLang === 'en') {
           currentLang = 'pl';
           // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
@@ -873,9 +877,10 @@
       setLang(currentLang);
       });
 
-      //ⓘ W przypadku wielu elementów trzeba używać metody querySelectorAll i pętli forEach.
+      //ⓘ W przypadku selektorów z wieloma elementami trzeba używać metody querySelectorAll i pętli forEach.
       const humanLiberationButton = document.querySelectorAll('.human-liberation-button');
-      const humanLiberation = document.querySelectorAll(".human-question");
+
+      const humanQuestion = document.querySelectorAll(".human-question");
       
       const racismFallacies = document.querySelector(".racism-fallacies");
       const veganismFallacies = document.querySelector(".veganism-fallacies");
@@ -933,6 +938,9 @@
       humanLiberationButton.forEach(humLibBtn => {
         humLibBtn.addEventListener("click", () => {
 
+          //humanLiberation = true;
+
+
           humanLiberationLogo.style.display = "none";
           animalLiberationLogo.style.display = "block";
 
@@ -947,11 +955,12 @@
 
           //🟠Działa lepiej, ale dalej nie do końca, bo jeśli po wcisnięciu buttona humanLiberation, wciśnie się button zmiany języka, to polska wersja humanLiberation znowu się pojawia.
           // Czy lepiej zobić przeładowanie strony po klinięciu w languageButton czy jakąś instrukcję typu toggle dla humanLiberation?
-          humanLiberation.forEach(el => {
+          // Przeładowanie strony wymagałoby refaktoryzacji całej funkcji spolszczającej, i ponadto nie dawałoby najlepszego UX.
+          // Mogę spróbować jakoś to rozwiązać warunkami typu if humanLiberated = true i dodać do languageButton.
+
+          humanQuestion.forEach(el => {
             el.style.display = "none";
           });
-          
-  
 
           history.style.display = "block";
         });
