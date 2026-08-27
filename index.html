@@ -862,7 +862,6 @@
       const languageButton = document.querySelector('.language-button');
 
       languageButton.addEventListener('click', () => {
-
       //przeładowa nie strony, które ustawia język eng, który jest defaultowym językiem
         //location.reload();
 
@@ -875,9 +874,17 @@
         }
 
       setLang(currentLang);
+
+       if (humanLiberationButtonClicked === true){
+            humanQuestion.forEach(el => {
+            el.style.display = "none";
+          });
+        }
       });
 
       //ⓘ W przypadku selektorów z wieloma elementami trzeba używać metody querySelectorAll i pętli forEach.
+      let humanLiberationButtonClicked;
+      console.log(humanLiberationButtonClicked);
       const humanLiberationButton = document.querySelectorAll('.human-liberation-button');
 
       const humanQuestion = document.querySelectorAll(".human-question");
@@ -887,14 +894,13 @@
 
       //?
       const animalLiberationButton = document.querySelector("animal_liberation");
-
       const animalLiberation = document.querySelector(".animal-question");
 
       const humanLiberationLogo = document.querySelector(".human-liberation-logo");
 
       const animalLiberationLogo = document.querySelector(".animal-liberation-logo");
 
-      //⚠ 🔴⚠ ?
+      //⚠ ?
       // const racismTitle = document.querySelector(".racism-header__title");
 
       const racismHeader = document.querySelector(".racism-header");
@@ -931,15 +937,14 @@
       //   //  /* 🟡 transitions do poprawki */
       // });
 
-
       //?
       // setLang(lang);
 
       humanLiberationButton.forEach(humLibBtn => {
         humLibBtn.addEventListener("click", () => {
 
-          //humanLiberation = true;
-
+          humanLiberationButtonClicked = true;
+          console.log(humanLiberationButtonClicked);
 
           humanLiberationLogo.style.display = "none";
           animalLiberationLogo.style.display = "block";
