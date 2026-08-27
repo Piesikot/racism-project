@@ -98,6 +98,7 @@
       -o-transition: opacity 0.5s ease-in-out;
       transition: opacity 0.5s ease-in-out;
     }
+    /* 🟡 button teraz schodzi do nowej lini, a na serwerze jest dobrze */
     .human-question {
       opacity: 1;
     }
@@ -184,7 +185,7 @@
 
     <header class="racism-header">
       <h1 lang="en" class="racism-header__title">Racism is OK because:</h1>
-      <h1 lang="pl" class="racism-header__title">Szowinizm jest OK ponieważ:</h1>
+      <h1 lang="pl" class="racism-header__title">Szowinizm jest OK, ponieważ:</h1>
     </header>
     <header class="speciesism-header">
       <h1 lang="en" class="speciesism-header__title">Speciesism is OK because:</h1>
@@ -765,14 +766,23 @@
 
             </div>
         </li>    -->
+
     <div class="question-container">
-      <div class="human-question">
+      <div lang="en" class="human-question">
         Do you feel outraged when reading these arguments about racism? Do you
         consider them unethical and absurd, and you think that such type of
         reasoning should not be tolerated and applied to living beings,
         especially innocent ones? If so, click this button:
-        <button class="human-liberation-button">Human liberation</button>
+        <button lang="en" class="human-liberation-button">Human Liberation</button>
       </div>
+      <div lang="pl" class="human-question">
+        Czy czujesz oburzenie, gdy czytasz te argumenty dotyczące rasizmu? Czy
+        uważasz je za nieetyczne i absurdalne oraz sądzisz, że taki sposób
+        rozumowania nie powinien być tolerowany ani stosowany wobec istot
+        żywych, zwłaszcza niewinnych? Jeśli tak, kliknij ten przycisk:
+        <button lang="pl" class="human-liberation-button">Wyzwolenie Ludzi</button>
+      </div>
+
       <div class="animal-question">
         Well, in fact, these arguments mirror the most commonly used arguments
         by speciesists against veganism, where the word "animals" has been
@@ -831,50 +841,52 @@
         const plElements = document.querySelectorAll('[lang="pl"]');
 
         if (lang === 'en') {
-          enElements.forEach(element => {
-            element.style.display = 'block';
+          enElements.forEach(el => {
+            el.style.display = 'block';
           });
-          plElements.forEach(element => {
-            element.style.display = 'none';
+          plElements.forEach(el => {
+            el.style.display = 'none';
           });
         } else if (lang === 'pl') {
-          enElements.forEach(element => {
-            element.style.display = 'none';
+          enElements.forEach(el => {
+            el.style.display = 'none';
           });
-          plElements.forEach(element => {
-            element.style.display = 'block';
+          plElements.forEach(el => {
+            el.style.display = 'block';
           });
         }
       }
       
       setLang(currentLang);
 
-      const langBtn = document.querySelector('.language-button');
+      const languageButton = document.querySelector('.language-button');
 
-      langBtn.addEventListener('click', () => {
+      languageButton.addEventListener('click', () => {
         if (currentLang === 'en') {
           currentLang = 'pl';
-          // langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
+          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
         } else if (currentLang === 'pl'){
           currentLang = 'en';
-          // langBtn.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
+          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
         }
 
       setLang(currentLang);
       });
 
-      const humanLiberationButton = document.querySelector(".human-liberation-button")
-      const humanLiberation = document.querySelector(".human-question");
+      //ⓘ W przypadku wielu elementów trzeba używać metody querySelectorAll i pętli forEach.
+      const humanLiberationButton = document.querySelectorAll('.human-liberation-button');
+      const humanLiberation = document.querySelectorAll(".human-question");
+      
       const racismFallacies = document.querySelector(".racism-fallacies");
       const veganismFallacies = document.querySelector(".veganism-fallacies");
 
       //?
-      const animalLiberationButton =
-        document.querySelector("animal_liberation");
+      const animalLiberationButton = document.querySelector("animal_liberation");
 
       const animalLiberation = document.querySelector(".animal-question");
 
       const humanLiberationLogo = document.querySelector(".human-liberation-logo");
+
       const animalLiberationLogo = document.querySelector(".animal-liberation-logo");
 
       //⚠ 🔴⚠ ?
@@ -884,33 +896,66 @@
       const speciesismHeader = document.querySelector(".speciesism-header");
 
       const history = document.querySelector(".history-question-container");
-      humanLiberationButton.addEventListener("click", (event) => {     
 
-      humanLiberationLogo.style.display = "none";
-      animalLiberationLogo.style.display = "block";
 
-        // 🔴?
-        animalLiberation.style.display = "none";
-        animalLiberation.style.display = "block";
 
-        racismHeader.style.display = "none";
-        speciesismHeader.style.display = "block";
 
-        racismFallacies.style.display = "none";
-        veganismFallacies.style.display = "block";
 
-       // liberationLogo.innerHTML =
-       //   '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
-       // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
+      // humanLiberationButton.addEventListener("click", (event) => {     
 
-        humanLiberation.style.display = "none";
+      // humanLiberationLogo.style.display = "none";
+      // animalLiberationLogo.style.display = "block";
 
-        history.style.display = "block";
-        //  /* 🟡 transitions do poprawki */
-      });
+      //   // 🔴?
+      //   animalLiberation.style.display = "none";
+      //   animalLiberation.style.display = "block";
+
+      //   racismHeader.style.display = "none";
+      //   speciesismHeader.style.display = "block";
+
+      //   racismFallacies.style.display = "none";
+      //   veganismFallacies.style.display = "block";
+
+      //  // liberationLogo.innerHTML =
+      //  //   '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
+      //  // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
+
+      //   humanLiberation.style.display = "none";
+
+      //   history.style.display = "block";
+      //   //  /* 🟡 transitions do poprawki */
+      // });
+
 
       //?
       // setLang(lang);
+
+      humanLiberationButton.forEach(humLibBtn => {
+        humLibBtn.addEventListener("click", () => {
+
+          humanLiberationLogo.style.display = "none";
+          animalLiberationLogo.style.display = "block";
+
+          animalLiberation.style.display = "none";
+          animalLiberation.style.display = "block";
+
+          racismHeader.style.display = "none";
+          speciesismHeader.style.display = "block";
+
+          racismFallacies.style.display = "none";
+          veganismFallacies.style.display = "block";
+
+          //🟠Działa lepiej, ale dalej nie do końca, bo jeśli po wcisnięciu buttona humanLiberation, wciśnie się button zmiany języka, to polska wersja humanLiberation znowu się pojawia.
+          // Czy lepiej zobić przeładowanie strony po klinięciu w languageButton czy jakąś instrukcję typu toggle dla humanLiberation?
+          humanLiberation.forEach(el => {
+            el.style.display = "none";
+          });
+          
+  
+
+          history.style.display = "block";
+        });
+      });
     </script>
   </body>
 </html>
