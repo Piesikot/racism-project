@@ -86,6 +86,9 @@
     button {
       font-weight: 600;
     }
+    .human-liberation-button {
+      display: inline-block;
+    }
     .question-container {
       padding: 50px 10px 50px 10px;
     }
@@ -772,15 +775,13 @@
         Do you feel outraged when reading these arguments about racism? Do you
         consider them unethical and absurd, and you think that such type of
         reasoning should not be tolerated and applied to living beings,
-        especially innocent ones? If so, click this button:
-        <button lang="en" class="human-liberation-button">Human Liberation</button>
+        especially innocent ones? If so, click this button: <button lang="en" class="human-liberation-button">Human Liberation</button>
       </div>
       <div lang="pl" class="human-question">
         Czy czujesz oburzenie, gdy czytasz te argumenty dotyczące rasizmu? Czy
         uważasz je za nieetyczne i absurdalne oraz sądzisz, że taki sposób
         rozumowania nie powinien być tolerowany ani stosowany wobec istot
-        żywych, zwłaszcza niewinnych? Jeśli tak, kliknij ten przycisk:
-        <button lang="pl" class="human-liberation-button">Wyzwolenie Ludzi</button>
+        żywych, zwłaszcza niewinnych? Jeśli tak, kliknij ten przycisk: <button lang="pl" class="human-liberation-button">Wyzwolenie Ludzi</button>
       </div>
 
 
@@ -885,6 +886,9 @@
       const speciesismExplanation = document.querySelectorAll(
           ".speciesism-explanation"
         );
+      const humanLiberationButtons = document.querySelectorAll(
+        ".human-liberation-button"
+      );
       const historyQuestionElements = document.querySelectorAll(
         ".history-question__title, " +
         ".history-question__description"
@@ -906,6 +910,14 @@
             el.style.display = 'block';
           });
         }
+
+        humanLiberationButtons.forEach(el => {
+          if (el.getAttribute("lang") === lang) {
+            el.style.display = "inline-block";
+          } else {
+            el.style.display = "none";
+          }
+        });
 
         humanQuestion.forEach(el => {
           if (humanLiberationButtonClicked) {
