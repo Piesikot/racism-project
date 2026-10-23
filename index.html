@@ -130,17 +130,17 @@
       text-decoration:underline;
 
     }
-    footer {
-      display: flex;
+    .footer {
+      /* display: flex; */
       justify-content: center;
       text-align: center;
       padding: 60px 0 0 0;
     }
-    .copyright {
+    .footer__copyright {
       margin-top: 5px;
     }
     .veganfallacy-link,
-    .copyright-link {
+    .footer__copyright-link {
       color: black;
     }
     @media screen and (max-width: 900px) {
@@ -827,13 +827,13 @@
             </span>
           </span>
           <span lang="pl" class="history-question__description">
-            W pierwszej połowie XIX wieku około 2% społeczeństwa popierało ruch
-            abolicjonistyczny. Choć zaczynali jako grupa mniejszościowa, ich wpływ
-            stopniowo rósł. Dziś podobny odsetek ludzi to weganie‑abolicjoniści,
-            sprzeciwiający się zniewalaniu zwierząt. Jak sądzisz — czy wtedy stanąłbyś po
-            właściwej stronie historii?
+              W pierwszej połowie XIX wieku około 2% społeczeństwa popierało ruch
+              abolicjonistyczny. Choć zaczynali jako grupa mniejszościowa, ich wpływ
+              stopniowo rósł. Dziś podobny odsetek ludzi to weganie‑abolicjoniści,
+              sprzeciwiający się zniewalaniu zwierząt. Jak sądzisz — czy wtedy stanąłbyś po
+              właściwej stronie historii?
             <span class="history-question__explanation">
-              W rzeczywistości, twoje dzisiejsze podejście do wykorzystywania zwierząt ujawnia, po której stronie tak naprwawdę stanąłbyś dwieście lat temu.
+              W rzeczywistości, twoje dzisiejsze podejście do wykorzystywania zwierząt ujawnia, po której stronie tak naprawdę stanąłbyś dwieście lat temu.
             </span>
           </span>
 
@@ -846,18 +846,25 @@
       </div>
 
     </div>
-    <footer>
-      <span>
-        Website got inspiration from
-        <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
-          >yourveganfallacyis.com</a
-        >
-        and some very nice people from all over the world ;)
-        <div class="copyright">
+    <footer class="footer">
+        <div lang="en" class="footer__inspiration-info">Website got inspiration from
+          <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
+          >yourveganfallacyis.com</a>
+          and some very nice people from all over the world ;)
+        </div>
+        <div lang="pl" class="footer__inspiration-info">Strona zaczerpnęła inspirację od
+          <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
+          >yourveganfallacyis.com</a>
+          oraz kilku miłych ludzi z całego świata ;)
+        </div>
+        <div lang="en" class="footer__copyright">
           Created by
-          <a class="copyright-link" href="https://piesikot.co/">Piesikot</a>
-        </div></span
-        >
+          <a class="footer__copyright-link" href="https://piesikot.co/">Piesikot</a>
+        </div>
+        <div lang="pl" class="footer__copyright">
+          Stworzone przez
+          <a class="footer__copyright-link" href="https://piesikot.co/">Piesikot</a>
+        </div>
     </footer>
 
     <script>
@@ -1035,6 +1042,7 @@
 
           history.style.display = "block";
           setLang(currentLang);
+
         });
       });
       
