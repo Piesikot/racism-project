@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en pl">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
       line-height: 1.5;
     }
     
-    .human-liberation-logo img, .animal-liberation-logo img {
+    .human-liberation-logo__image, .animal-liberation-logo__image {
       width: 50px;
       padding: 0.20rem;
     }
@@ -39,19 +39,19 @@
       text-align: center;
 
     }
-    .language-button img{
+    .language-button__image {
       width: 3rem;
       border: 1px solid #000;
     }
-    .language-button__span{
+    .language-button__label {
       /* text-align: center; */
       font-size: 0.75rem;
       
     }
-    .language-button:hover .language-button__span{
+    .language-button:hover .language-button__label {
       text-decoration: underline;
     }
-    .language-button__span:hover{
+    .language-button__label:hover {
     text-decoration: underline;
     }
 
@@ -67,8 +67,8 @@
     }
 
 
-    .vegan-h1,
-    .excuse-h1 {
+    .vegan__heading,
+    .excuse__heading {
       display: none;
     }
     .veganism-fallacies, .speciesism-header {
@@ -78,17 +78,17 @@
       padding: 10px;
       margin-bottom: 70px;
     }
-    .fallacy-title {
+    .fallacy__title {
       font-weight: 600;
       margin-bottom: 20px;
     }
     button {
       font-weight: 600;
     }
-    .human-liberation-button {
+    .human-question__button {
       display: inline-block;
     }
-    .question-container {
+    .question {
       padding: 50px 10px 50px 10px;
     }
     /* 🟡 transitions do poprawki */
@@ -109,7 +109,7 @@
       display: none;
       /* margin-top: -40px; */
     }
-    .history-question-container{
+    .history-question {
       margin-top: 10vh;
       display: none;
     }
@@ -141,7 +141,7 @@
     .footer__copyright {
       margin-top: 5px;
     }
-    .veganfallacy-link,
+    .footer__inspiration-link,
     .footer__copyright-link {
       color: black;
     }
@@ -163,25 +163,25 @@
   </style>
   <body>
       <div class="human-liberation-logo">
-        <img lang="en" src="src/human_liberation.png" alt="the raised fist symbol" />
+        <img lang="en" class="human-liberation-logo__image" src="src/human_liberation.png" alt="the raised fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
-        <img lang="pl" src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
+        <img lang="pl" class="human-liberation-logo__image" src="src/human_liberation.png" alt="symbol zaciśniętej pięści" />
         <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
       </div>
 
       <div class="animal-liberation-logo">
-        <img lang="en" src="src/animal_liberation.png" alt="the raised animal fist symbol" />
+        <img lang="en" class="animal-liberation-logo__image" src="src/animal_liberation.png" alt="the raised animal fist symbol" />
         <!-- ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only. -->
-        <img lang="pl" src="src/animal_liberation.png" alt="symbol uniesionej łapy" />
+        <img lang="pl" class="animal-liberation-logo__image" src="src/animal_liberation.png" alt="symbol uniesionej łapy" />
         <!-- Logo ALF użyte w tym projekcie nie jest moją własnością. Wszelkie prawa należą do jego twórców/właścicieli. Zostało wykorzystane wyłącznie w celach ilustracyjnych. -->
       </div>
 
     <nav>
       <div class="language-button" tabindex="0" role="button">
-        <img lang="en" class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski" >
-        <img lang="pl" class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
-        <span lang="en" class="language-button__span">Ustaw język polski</span>
-        <span lang="pl" class="language-button__span">Set english language</span>
+        <img lang="en" class="language-button__image" src="src/en-to-pl.png" alt="flaga Polski" >
+        <img lang="pl" class="language-button__image" src="src/pl-to-en.png" alt="flaga Ameryki ">
+        <span lang="en" class="language-button__label">Ustaw język polski</span>
+        <span lang="pl" class="language-button__label">Set english language</span>
       </div>
     </nav>
 
@@ -197,280 +197,280 @@
     <!-- Racism Fallacies -->
     <ol class="racism-fallacies">
       <!--  Fallacy 1. -->
-      <li>
-        <div lang="en" class="fallacy-title">
+      <li class="fallacy">
+        <div lang="en" class="fallacy__title">
           Other Races Are Not Intelligent Enough to Worry About
         </div>
-        <div  lang="en" class="fallacy-description">
+        <div  lang="en" class="fallacy__description">
           Other races are not as intelligent and emotionally developed as my
           race, so killing them and causing them pain is acceptable.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Inne Rasy Nie Są Wystarczająco Inteligentne, By Się Nimi Przejmować
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Inne rasy nie są tak inteligentne ani emocjonalnie rozwinięte jak moja,
           więc zabijanie ich i zadawanie im cierpienia jest akceptowalne.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 2.  -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Other Races Attack Other Races, So I Can Too
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Because other countries are at war, there is nothing wrong with us
           attacking other countries, killing their citizens, and exploiting
           them.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Inne Rasy Atakują Inne Rasy, Więc Ja Też Mogę
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ponieważ inne kraje są w stanie wojny, nie ma nic złego w tym,
           że my również atakujemy inne państwa, zabijamy ich obywateli
           oraz ich wykorzystujemy.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 3.-->
-        <div lang="en" class="fallacy-title">Being Racist Is My Personal Choice.</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Being Racist Is My Personal Choice.</div>
+        <div lang="en" class="fallacy__description">
           Being racist is a personal choice, just as being vegan is a personal
           choice, so everyone should live in accordance with their values and let others live.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Bycie Szowinistą To Mój Osobisty Wybór
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Bycie szowinistą jest osobistym wyborem, tak samo jak bycie weganinem jest
           osobistym wyborem, więc każdy powinien żyć w zgodzie z własnym sumieniem i pozwolić żyć innym.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 4.-->
-        <div lang="en" class="fallacy-title">Being Tolerant Is Too Difficult</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Being Tolerant Is Too Difficult</div>
+        <div lang="en" class="fallacy__description">
           Being tolerant is too difficult and complicated for the average
           person, so it is unreasonable to expect everyone not to be racists.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Bycie Tolerancyjnym Jest Zbyt Trudne
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Bycie tolerancyjnym jest zbyt trudne i skomplikowane dla przeciętnej osoby,
           więc nierozsądne jest oczekiwać, że wszyscy nagle przestaną być szowinistami.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
           <!-- Fallacy 5. -->
-        <div lang="en" class="fallacy-title">Interspecies Killing Is Natural</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Interspecies Killing Is Natural</div>
+        <div lang="en" class="fallacy__description">
           Humans evolved as an expansionary species, so fighting with other
           races is natural for us.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Międzygatunkowe Zabijanie Jest Naturalne
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ludzie ewoluowali jako gatunek ekspansywny, więc walka z innymi rasami
           jest dla nas czymś naturalnym.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!--  Fallacy 6.-->
-        <div lang="en" class="fallacy-title">Being Tolerant Changes Nothing</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Being Tolerant Changes Nothing</div>
+        <div lang="en" class="fallacy__description">
           Not being racist changes nothing because there will always be other
           racism in the world, so what's the point?
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Bycie Tolerancyjnym Niczego Nie Zmienia
         </div>
 
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Nie bycie szowinistą niczego nie zmienia, ponieważ na świecie zawsze
           będzie istnieć jakaś forma szowinizmu, więc jaki w tym sens?
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 7.  -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           I Don't Have To Be Tolerant To Love People
         </div>
-       <div lang="en" class="fallacy-description">
+       <div lang="en" class="fallacy__description">
           I love people enough to fulfill their needs while they're alive, but
           sometimes I also need them to be exploited to satisfy my
           needs. So there is no conflict between loving people and exploiting them.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nie Muszę Być Tolerancyjny, Żeby Kochać Ludzi
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Kocham ludzi na tyle, by zaspokajać ich potrzeby, gdy żyją, ale rozumiem też,
           że czasem muszą zostać wykorzystani, aby zaspokoić moje potrzeby.
           Dlatego nie ma żadnego konfliktu między kochaniem ludzi a wykorzystywaniem ich.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 8.-->
-        <div lang="en" class="fallacy-title">I Honor The Countries I Conquer</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">I Honor The Countries I Conquer</div>
+        <div lang="en" class="fallacy__description">
           I honor the countries I conquer during my expansions for yielding their territory, women, and children to me.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Honoruję Kraje, Które Podbijam
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Honoruję kraje, które podbijam podczas moich ekspansji, za to że oddają mi
           swoje terytorium, oraz swoje kobiety i dzieci.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 9. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           I Conquer Other Countries Only In A Humanitarian Way
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           It's important for civilians to be treated well, so I only kill
           soldiers who went to war in a way that is free from suffering, and
           death is quick and humanitarian.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Podbijam Inne Kraje Wyłącznie W Humanitarny Sposób
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ważne jest, aby cywile byli traktowani dobrze, więc zabijam tylko żołnierzy,
           którzy poszli na wojnę, i robię to w sposób wolny od cierpienia — śmierć jest
           szybka i humanitarna.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 10. -->
-        <div lang="en" class="fallacy-title">My Race Is The Master Race</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">My Race Is The Master Race</div>
+        <div lang="en" class="fallacy__description">
           Other races are genetically inferior to mine, so killing them and
           causing them pain is acceptable. From an evolutionary standpoint, only
           my race has the right to live.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Moja Rasa Jest Rasą Panów
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Inne rasy są genetycznie gorsze od mojej, więc zabijanie ich i zadawanie im
           cierpienia jest akceptowalne. Z ewolucyjnego punktu widzenia tylko moja rasa
           ma prawo do życia.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!--  Fallacy 11.-->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           My Religion Allows Me To Kill Other People
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Religion is my moral compass, which gives me the right to kill people.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Moja Religia Pozwala Mi Zabijać Innych Ludzi
         </div>
 
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Religia jest moim moralnym kompasem, który daje mi prawo do zabijania ludzi.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!--  Fallacy 12. -->
-        <div lang="en" class="fallacy-title">Our Ancestors Conquered Other Countries</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Our Ancestors Conquered Other Countries</div>
+        <div lang="en" class="fallacy__description">
           Our ancestors have been conquering other countries and enslaving their
           citizens since the beginning of their existence, so it's good to
           continue this.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nasi Przodkowie Podbijali Inne Kraje
         </div>
 
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Nasi przodkowie od początku swojego istnienia podbijali inne kraje i
           zniewalali ich obywateli, więc dobrze jest to kontynuować.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!--  Fallacy 13. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Our Tradition Allows Or Mandates Killing Other People
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Because my culture or tradition allows or mandates it, I am either morally
           permitted or morally obligated to kill people.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nasza Tradycja Pozwala Lub Nakazuje Zabijanie Innych Ludzi
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Skoro moja kultura lub tradycja na to pozwala albo tego wymaga, to moralnie
           albo mam prawo zabijać ludzi, albo jestem do tego zobowiązany.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 14.-->
-        <div lang="en" class="fallacy-title">Multiculturalism Is Brainwashing</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Multiculturalism Is Brainwashing</div>
+        <div lang="en" class="fallacy__description">
           Raising children in multiculturalism is brainwashing because children
           are too young to make significant decisions on this topic. Children
           have the right to be racists, so forcing multiculturalism and
           tolerance on them is unethical.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Multikulti To Pranie Mózgu
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Wychowywanie dzieci w środowisku wielokulturowym jest praniem mózgu, ponieważ są one
           zbyt młode, by podejmować świadome decyzje w tym zakresie. Dzieci mają prawo wyboru do
           bycia szowinistami, więc zmuszanie ich do multikulturalizmu i tolerancji jest
           nieetyczne.
       </li>
-      <li>
+      <li class="fallacy">
         <!--  Fallacy 15.-->
-        <div lang="en" class="fallacy-title">Multiculti Is Just A Passing Fad</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Multiculti Is Just A Passing Fad</div>
+        <div lang="en" class="fallacy__description">
           Multiculturalism is just another fad that will soon pass, like all the
           previous ones.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Multikulti To Tylko Przemijająca Moda
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Multikulturalizm jest jedynie kolejną modą, która wkrótce przeminie, tak jak
           wszystkie poprzednie.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 16. -->
-        <div lang="en" class="fallacy-title">Tolerant People Would Also Kill In War</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">Tolerant People Would Also Kill In War</div>
+        <div lang="en" class="fallacy__description">
           There are situations in which people who are not racists would kill
           another person if they had no other choice.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Ludzie Tolerancyjni Też Zabijaliby Na Wojnie
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Istnieją sytuacje, w których osoby, które nie są szowinistami
           również zabiłyby drugiego człowieka, gdyby nie miały innego wyjścia.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Fallacy 17. -->
-        <div lang="en" class="fallacy-title">It's Impossible To Be 100% Tolerant</div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__title">It's Impossible To Be 100% Tolerant</div>
+        <div lang="en" class="fallacy__description">
           The philosophy of tolerance is flawed because tolerating every single
           person is impossible.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nie Da Się Być W 100% Tolerancyjnym
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Filozofia tolerancji jest wadliwa, ponieważ tolerowanie absolutnie każdej
           osoby jest niemożliwe.
         </div>
@@ -479,313 +479,309 @@
 
     <!-- Veganism Fallacies -->
     <ol class="veganism-fallacies">
-      <li>
+      <li class="fallacy">
         <!--  Vegan Fallacy 1. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Other Species Are Not Intelligent Enough to Worry About
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Other species are not as intelligent and emotionally developed as my race, so killing them and causing them pain is acceptable.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Inne Gatunki Nie Są Wystarczająco Inteligentne, By Się Nimi Przejmować
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Inne gatunki nie są tak inteligentne ani tak emocjonalnie rozwinięte jak moja rasa, więc zabijanie ich i zadawanie im cierpienia jest akceptowalne.
         </div>
         </li>
-        <li>
+        <li class="fallacy">
           <!-- Vegan Fallacy 2.-->
-          <div lang="en" class="fallacy-title">
+          <div lang="en" class="fallacy__title">
             Other Species Eat Other Species, So I Can Too
           </div>
-          <div lang="en" class="fallacy-description">
+          <div lang="en" class="fallacy__description">
             Because other species eat other species, there is nothing wrong with us eating other species, imprisoning or exploiting them.
           </div>
-          <div lang="pl" class="fallacy-title">
+          <div lang="pl" class="fallacy__title">
             Inne Gatunki Jedzą Inne Gatunki, Więc Ja Też Mogę
           </div>
-          <div lang="pl" class="fallacy-description">
+          <div lang="pl" class="fallacy__description">
             Ponieważ inne gatunki jedzą inne gatunki, nie ma nic złego w tym, że my również jemy inne gatunki, więzimy je i wykorzystujemy.
           </div>
         </li>
-        <li>
+        <li class="fallacy">
           <!-- Vegan Fallacy 3.-->
-          <div lang="en" class="fallacy-title">
+          <div lang="en" class="fallacy__title">
             This Is My Personal Choice.
           </div>
-          <div lang="en" class="fallacy-description">
+          <div lang="en" class="fallacy__description">
             Not being vegan, just as being vegan is a personal choice, so everyone should live in accordance with their values and let others live.
           </div>
-          <div lang="pl" class="fallacy-title">
+          <div lang="pl" class="fallacy__title">
             To Mój Osobisty Wybór
           </div>
-          <div lang="pl" class="fallacy-description">
+          <div lang="pl" class="fallacy__description">
             Nie bycie weganinem, tak samo jak bycie weganinem, jest osobistą decyzją, więc każdy powinien żyć w zgodzie z własnym sumieniem i pozwolić żyć innym.
           </div>
         </li>
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 4.-->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Interspecies Killing Is Natural
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Humans evolved as meat eaters so killing animals is natural for us.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Międzygatunkowe Zabijanie Jest Naturalne
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ludzie ewoluowali jako mięsożercy, więc zabijanie zwierząt jest dla nas czymś naturalnym.
         </div>
       </li>
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 5.-->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Being Vegan Is Too Difficult
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Being vegan is too difficult and complicated for the average person, so it is unreasonable to expect everyone not to be speciesist.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Bycie Weganinem Jest Zbyt Trudne
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Bycie weganinem jest zbyt trudne i skomplikowane dla przeciętnej osoby, więc nierozsądne jest oczekiwać, że każdy przestanie być szowinistą gatunkowym.
         </div>
       </li>
       
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 6. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Being Vegan Changes Nothing
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Not being a speciesist changes nothing because there will always be other speciesists in the world, so what's the point?
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Bycie Weganinem Nic Nie Zmienia
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Nie bycie szowinistą gatunkowym niczego nie zmienia, ponieważ na świecie zawsze będą inni szowiniści gatunkowi, więc jaki jest w tym sens?
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 7. --> 
         <!-- 🟡 do korrekty, żeby było konsekwentnie do Racism Fallacy -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           I Don't Have To Be Vegan To Love Animals
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           I love animals enough to fulfill their needs while they're alive, but I also understand that sometimes they need to be killed to satisfy my needs. So there is no conflict between loving animals and killing them.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nie Muszę Być Weganinem, By Kochać Zwierzęta
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Kocham zwierzęta na tyle, by zaspokajać ich potrzeby, gdy żyją, ale rozumiem też, że czasem muszą zostać zabite, by zaspokoić moje potrzeby. Dlatego nie ma konfliktu między kochaniem zwierząt a ich zabijaniem.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 8. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           I Honor The Animals I Eat
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           I honor the animals I eat with my hunting and farming practices for their sacrifice.
         </div>
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Oddaję Cześć Zwierzętom, Które Jem
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Oddaję cześć zwierzętom, które jem, poprzez moje praktyki łowieckie i hodowlane, w uznaniu ich „poświęcenia”.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 9. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           I Eat Animals Killed Only In A Humane Way
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           It's important for animals to be treated well, so I only eat animals killed in a way that is free from suffering, and death is quick and humane.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Jem Tylko Zwierzęta Zabite W Humanitarny Sposób
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ważne jest, by zwierzęta były dobrze traktowane, więc jem tylko te, które zostały zabite bez cierpienia, szybko i „humanitarnie”.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 10. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           My Species Is The Dominant Species
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Other species are genetically inferior to mine, so killing them and causing them pain is acceptable. From an evolutionary standpoint, only my species has the right to live.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Mój Gatunek Jest Gatunkiem Dominującym
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Inne gatunki są genetycznie gorsze od mojego, więc zabijanie ich i zadawanie im bólu jest akceptowalne. Z ewolucyjnego punktu widzenia tylko mój gatunek ma prawo żyć.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 11. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           My Religion Allows Me To Kill Other Beings
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Religion is my moral compass, which gives me the right to kill animals.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Moja Religia Pozwala Mi Zabijać Inne Istoty
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Religia jest moim moralnym kompasem, który daje mi prawo zabijać zwierzęta.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 12. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Our Ancestors Ate Meat
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Our ancestors have been eating animals and enslaving them since the beginning of their existence, so it's good to continue this.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nasi Przodkowie Jedli Mięso
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Nasi przodkowie od początku swojego istnienia jedli zwierzęta i zniewalali je, więc dobrze jest to kontynuować.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 13. -->
          <!-- 🟡 do poprawki łącznie z racism fallacy -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Our Tradition Allows Or Mandates Killing Other Beings
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Because my culture or tradition allows or mandates it, morally I have a choice or I am obligated to kill animals.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nasza Tradycja Pozwala Lub Nakazuje Zabijanie Innych Istot
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Skoro moja kultura lub tradycja na to pozwala albo tego wymaga, to moralnie albo mam prawo zabijać zwierzęta, albo jestem do tego zobowiązany.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 14. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Veganism Is Brainwashing
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Raising children in veganism is brainwashing because children are too young to make significant decisions on this topic. Children have the right to eat meat and dairy, so forcing veganism on them is unethical.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Weganizm Jest Praniem Mózgu
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Wychowywanie dzieci w weganizmie jest praniem mózgu, ponieważ są zbyt młode, by podejmować świadome decyzje w tym zakresie. Dzieci mają prawo wyboru jedzenia mięsa i nabiału, więc zmuszanie ich do weganizmu jest nieetyczne.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 15. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Veganism Is Just A Passing Fad
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           Veganism is just another fad that will soon pass, like all the previous ones.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Weganizm To Tylko Przemijająca Moda
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Weganizm jest jedynie kolejną modą, która wkrótce przeminie, tak jak wszystkie poprzednie.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 16. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           Vegans Would Eat Meat On A Desert Island
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           There are situations in which people who are not speciesist would kill animals if they had no other choice.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Weganie Jedliby Mięso Na Bezludnej Wyspie
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Istnieją sytuacje, w których weganie również zabiliby zwierzę, gdyby nie mieli innego wyjścia.
         </div>
       </li>
 
-      <li>
+      <li class="fallacy">
         <!-- Vegan Fallacy 17. -->
-        <div lang="en" class="fallacy-title">
+        <div lang="en" class="fallacy__title">
           It's Impossible To Be 100% Vegan
         </div>
-        <div lang="en" class="fallacy-description">
+        <div lang="en" class="fallacy__description">
           The ideology of veganism is flawed because there is no way not to
           kill any being.
         </div>
 
-        <div lang="pl" class="fallacy-title">
+        <div lang="pl" class="fallacy__title">
           Nie Da Się Być W 100% Weganinem
         </div>
-        <div lang="pl" class="fallacy-description">
+        <div lang="pl" class="fallacy__description">
           Ideologia weganizmu jest wadliwa, ponieważ nie da się całkowicie uniknąć zabicia jakiejkolwiek istoty.
         </div>
       </li>
     </ol>
     <!-- New fallacy template -->
-    <!--<li> <div class="fallacy-title">
+    <!--<li class="fallacy"> <div class="fallacy__title">
 
             </div>
-            <div class="fallacy-description">
+            <div class="fallacy__description">
 
             </div>
         </li>    -->
 
-    <div class="question-container">
+    <div class="question">
       <div lang="en" class="human-question">
         Do you feel outraged when reading these arguments about racism? Do you
         consider them unethical and absurd, and you think that such type of
         reasoning should not be tolerated and applied to living beings,
-        especially innocent ones? If so, click this button: <button lang="en" class="human-liberation-button">Human Liberation</button>
+        especially innocent ones? If so, click this button: <button lang="en" class="human-question__button">Human Liberation</button>
       </div>
       <div lang="pl" class="human-question">
         Czy czujesz oburzenie, gdy czytasz te argumenty dotyczące szowinizmu? Czy
         uważasz je za nieetyczne i absurdalne oraz sądzisz, że taki sposób
         rozumowania nie powinien być tolerowany ani stosowany wobec istot
-        żywych, zwłaszcza niewinnych? Jeśli tak, kliknij ten przycisk: <button lang="pl" class="human-liberation-button">Wyzwolenie Ludzi</button>
+        żywych, zwłaszcza niewinnych? Jeśli tak, kliknij ten przycisk: <button lang="pl" class="human-question__button">Wyzwolenie Ludzi</button>
       </div>
-
-
-
-      <!-- 🔴🔴🔴 ⚠ 🐛 Kiedy dodam lang="en", zaczyna się wyświetlać. Poza tym 'animal-question' jest mylące🐛 ⚠🔴🔴🔴-->
   
       <!-- <div lang="en" class="animal-question" style="display: none;"> -->
         <div lang="en" class="speciesism-explanation" >
@@ -810,7 +806,7 @@
       </div>
 
 
-      <div class="history-question-container">
+      <div class="history-question">
          <h2 lang="en" class="history-question__title">
           On which side of world history do you think you would have stood 200 years ago, when human slavery was being abolished? On the side of the oppressors who owned slaves, or on the side of the victims and the abolitionists fighting for human rights?
           </h2>
@@ -838,7 +834,7 @@
           </span>
 
           <!-- <span class="history-question__question">
-            So which side will you choose now: <button class="animal_liberation">Animal liberation</button> or <button class="animal_liberation">Animal enslavement</button> ?
+            So which side will you choose now: <button class="animal-liberation-button">Animal liberation</button> or <button class="animal-liberation-button">Animal enslavement</button> ?
           </span> -->
 
           <!-- Not being vegan is your personal choice and it's OK, if you support humane local farms like https://www.elwooddogmeat.com -->
@@ -848,12 +844,12 @@
     </div>
     <footer class="footer">
         <div lang="en" class="footer__inspiration-info">Website got inspiration from
-          <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
+          <a class="footer__inspiration-link" href="https://yourveganfallacyis.com"
           >yourveganfallacyis.com</a>
           and some very nice people from all over the world ;)
         </div>
         <div lang="pl" class="footer__inspiration-info">Strona zaczerpnęła inspirację od
-          <a class="veganfallacy-link" href="https://yourveganfallacyis.com"
+          <a class="footer__inspiration-link" href="https://yourveganfallacyis.com"
           >yourveganfallacyis.com</a>
           oraz kilku miłych ludzi z całego świata ;)
         </div>
@@ -886,7 +882,7 @@
           ".speciesism-explanation"
         );
       const humanLiberationButtons = document.querySelectorAll(
-        ".human-liberation-button"
+        ".human-question__button"
       );
       const historyQuestionElements = document.querySelectorAll(
         ".history-question__title, " +
@@ -958,10 +954,10 @@
       languageButton.addEventListener('click', () => {
         if (currentLang === 'en') {
           currentLang = 'pl';
-          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
+          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__image" src="src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__label">Set english language</span></div>';
         } else if (currentLang === 'pl'){
           currentLang = 'en';
-          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski"><span class="language-button__span">Ustaw język polski</span></div>';
+          // languageButton.innerHTML = '<div class="language-button"><img class="language-button__image" src="src/en-to-pl.png" alt="flaga Polski"><span class="language-button__label">Ustaw język polski</span></div>';
         }
 
       setLang(currentLang);
@@ -976,7 +972,7 @@
 
       //ⓘ W przypadku selektorów z wieloma elementami trzeba używać metody querySelectorAll i pętli forEach.
      
-      const humanLiberationButton = document.querySelectorAll('.human-liberation-button');
+      const humanLiberationButton = document.querySelectorAll('.human-question__button');
 
       //const humanQuestion = document.querySelectorAll(".human-question");
       
@@ -984,9 +980,6 @@
       const veganismFallacies = document.querySelector(".veganism-fallacies");
 
       //?
-      const animalLiberationButton = document.querySelector("animal_liberation");
-
-      //🔴
       // const speciesismExplanation = document.querySelectorAll(".speciesism-explanation");
       //const speciesismExplanation = document.querySelectorAll(".speciesism-explanation");
 
@@ -1001,7 +994,7 @@
       const racismHeader = document.querySelector(".racism-header");
       const speciesismHeader = document.querySelector(".speciesism-header");
 
-      const history = document.querySelector(".history-question-container");
+      const history = document.querySelector(".history-question");
 
 
 
@@ -1012,7 +1005,7 @@
       // humanLiberationLogo.style.display = "none";
       // animalLiberationLogo.style.display = "block";
 
-      //   // 🔴?
+      //   // ?
       //   animalLiberation.style.display = "none";
       //   animalLiberation.style.display = "block";
 
@@ -1023,7 +1016,7 @@
       //   veganismFallacies.style.display = "block";
 
       //  // liberationLogo.innerHTML =
-      //  //   '<img src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
+      //  //   '<img class="animal-liberation-logo__image" src="src/animal_liberation.png" alt="Human Lberation Symbol">   ';
       //  // ALF logo used in this project is not my property. All rights belong to its respective creators/owners. It is used here for illustrative purposes only.
 
       //   humanLiberation.style.display = "none";
