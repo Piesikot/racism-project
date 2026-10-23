@@ -38,7 +38,6 @@
       padding: 1rem 0.5rem;
       text-align: center;
 
-     
     }
     .language-button img{
       width: 3rem;
@@ -178,8 +177,8 @@
       </div>
 
     <nav>
-      <div class="language-button">
-        <img lang="en" class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski">
+      <div class="language-button" tabindex="0" role="button">
+        <img lang="en" class="language-button__img" src="/src/en-to-pl.png" alt="flaga Polski" >
         <img lang="pl" class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki ">
         <span lang="en" class="language-button__span">Ustaw język polski</span>
         <span lang="pl" class="language-button__span">Set english language</span>
@@ -957,9 +956,6 @@
       const languageButton = document.querySelector('.language-button');
 
       languageButton.addEventListener('click', () => {
-      //przeładowa nie strony, które ustawia język eng, który jest defaultowym językiem
-        //location.reload();
-
         if (currentLang === 'en') {
           currentLang = 'pl';
           // languageButton.innerHTML = '<div class="language-button"><img class="language-button__img" src="/src/pl-to-en.png" alt="flaga Ameryki "><span class="language-button__span">Set english language</span></div>';
@@ -969,7 +965,13 @@
         }
 
       setLang(currentLang);
+      });
 
+      languageButton.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          //e.preventDefault();
+          languageButton.click();  // wywołuje to samo co kliknięcie
+        }
       });
 
       //ⓘ W przypadku selektorów z wieloma elementami trzeba używać metody querySelectorAll i pętli forEach.
@@ -1032,11 +1034,11 @@
 
       //?
       // setLang(lang);
-
+      
       humanLiberationButton.forEach(humLibBtn => {
         humLibBtn.addEventListener("click", () => {
 
-          humanLiberationButtonClicked = true;
+          humanLiberationButtonClicked = true;          
           //console.log(humanLiberationButtonClicked);
 
           humanLiberationLogo.style.display = "none";
