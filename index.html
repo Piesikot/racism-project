@@ -91,7 +91,7 @@
     }
     /* 🟡 transitions do poprawki */
     .human-question,
-    .animal-question {
+    .speciesism-explanation {
       -webkit-transition: opacity 0.5s ease-in-out;
       -moz-transition: opacity 0.5s ease-in-out;
       -ms-transition: opacity 0.5s ease-in-out;
@@ -102,10 +102,10 @@
     .human-question {
       opacity: 1;
     }
-    .animal-question {
-      opacity: 1;
+    .speciesism-explanation {
+      /* opacity: 1; */
       display: none;
-      margin-top: -40px;
+      /* margin-top: -40px; */
     }
     .history-question-container{
       margin-top: 10vh;
@@ -144,17 +144,17 @@
       color: black;
     }
     @media screen and (max-width: 900px) {
-      .animal-question {
+      .speciesism-explanation {
         margin-top: -50px;
       }
     }
     @media screen and (max-width: 700px) {
-      .animal-question {
+      .speciesism-explanation {
         margin-top: -75px;
       }
     }
     @media screen and (max-width: 400px) {
-      .animal-question {
+      .speciesism-explanation {
         margin-top: -100px;
       }
     }
@@ -783,7 +783,12 @@
         <button lang="pl" class="human-liberation-button">Wyzwolenie Ludzi</button>
       </div>
 
-      <div class="animal-question">
+
+
+      <!-- 🔴🔴🔴 ⚠ 🐛 Kiedy dodam lang="en", zaczyna się wyświetlać. Poza tym 'animal-question' jest mylące🐛 ⚠🔴🔴🔴-->
+  
+      <!-- <div lang="en" class="animal-question" style="display: none;"> -->
+        <div lang="en" class="speciesism-explanation" >
         Well, in fact, these arguments mirror the most commonly used arguments
         by speciesists against veganism, where the word "animals" has been
         substituted with the words "other races". By drawing parallels between
@@ -792,6 +797,18 @@
         their attitudes and behaviors towards non-human animals, because
         speciesism is not different from racism.
       </div>
+
+      <div lang="pl" class="speciesism-explanation">
+        W rzeczywistości te argumenty odzwierciedlają najczęściej używane
+        argumenty szowinistów gatunkowych przeciwko weganizmowi, w których
+        słowo „zwierzęta” zostało zastąpione słowami „inne rasy”. Poprzez
+        ukazanie podobieństw między rasizmem a szowinizmem gatunkowym celem
+        jest podkreślenie absurdalności i etycznej niespójności takiego
+        rozumowania oraz skłonienie ludzi do ponownego przemyślenia swoich
+        postaw i zachowań wobec zwierząt pozaludzkich, ponieważ szowinizm
+        gatunkowy nie różni się niczym od rasizmu.
+      </div>
+
 
       <div class="history-question-container">
          <h2 class="history-question__title">
@@ -834,13 +851,19 @@
       //let currentLang = 'en';
       //setLang(currentLang); 
 
-      let currentLang = 'en'; 
+      let currentLang = 'en';
+      let humanLiberationButtonClicked = false;
       
-      function setLang(lang) {
-        const enElements = document.querySelectorAll('[lang="en"]');
-        const plElements = document.querySelectorAll('[lang="pl"]');
 
-        if (lang === 'en') {
+      const enElements = document.querySelectorAll('[lang="en"]');
+      const plElements = document.querySelectorAll('[lang="pl"]');
+      const humanQuestion = document.querySelectorAll(".human-question");
+      const speciesismExplanation = document.querySelectorAll(
+          ".speciesism-explanation"
+        );
+      function setLang(lang) {
+
+        if (lang === 'en') {  
           enElements.forEach(el => {
             el.style.display = 'block';
           });
@@ -855,9 +878,32 @@
             el.style.display = 'block';
           });
         }
+
+        humanQuestion.forEach(el => {
+          if (humanLiberationButtonClicked) {
+            el.style.display = "none";
+          } else if (el.getAttribute("lang") === lang) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
+
+        speciesismExplanation.forEach(el => {
+          if (humanLiberationButtonClicked &&
+              el.getAttribute("lang") === lang) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
       }
       
       setLang(currentLang);
+
+
+      
+      console.log(humanLiberationButtonClicked);
 
       const languageButton = document.querySelector('.language-button');
 
@@ -875,26 +921,23 @@
 
       setLang(currentLang);
 
-       if (humanLiberationButtonClicked === true){
-            humanQuestion.forEach(el => {
-            el.style.display = "none";
-          });
-        }
       });
 
       //ⓘ W przypadku selektorów z wieloma elementami trzeba używać metody querySelectorAll i pętli forEach.
-      let humanLiberationButtonClicked;
-      console.log(humanLiberationButtonClicked);
+     
       const humanLiberationButton = document.querySelectorAll('.human-liberation-button');
 
-      const humanQuestion = document.querySelectorAll(".human-question");
+      //const humanQuestion = document.querySelectorAll(".human-question");
       
       const racismFallacies = document.querySelector(".racism-fallacies");
       const veganismFallacies = document.querySelector(".veganism-fallacies");
 
       //?
       const animalLiberationButton = document.querySelector("animal_liberation");
-      const animalLiberation = document.querySelector(".animal-question");
+
+      //🔴
+      // const speciesismExplanation = document.querySelectorAll(".speciesism-explanation");
+      //const speciesismExplanation = document.querySelectorAll(".speciesism-explanation");
 
       const humanLiberationLogo = document.querySelector(".human-liberation-logo");
 
@@ -903,6 +946,7 @@
       //⚠ ?
       // const racismTitle = document.querySelector(".racism-header__title");
 
+      ///???!!!
       const racismHeader = document.querySelector(".racism-header");
       const speciesismHeader = document.querySelector(".speciesism-header");
 
@@ -944,13 +988,10 @@
         humLibBtn.addEventListener("click", () => {
 
           humanLiberationButtonClicked = true;
-          console.log(humanLiberationButtonClicked);
+          //console.log(humanLiberationButtonClicked);
 
           humanLiberationLogo.style.display = "none";
           animalLiberationLogo.style.display = "block";
-
-          animalLiberation.style.display = "none";
-          animalLiberation.style.display = "block";
 
           racismHeader.style.display = "none";
           speciesismHeader.style.display = "block";
@@ -958,18 +999,18 @@
           racismFallacies.style.display = "none";
           veganismFallacies.style.display = "block";
 
-          //🟠Działa lepiej, ale dalej nie do końca, bo jeśli po wcisnięciu buttona humanLiberation, wciśnie się button zmiany języka, to polska wersja humanLiberation znowu się pojawia.
-          // Czy lepiej zobić przeładowanie strony po klinięciu w languageButton czy jakąś instrukcję typu toggle dla humanLiberation?
-          // Przeładowanie strony wymagałoby refaktoryzacji całej funkcji spolszczającej, i ponadto nie dawałoby najlepszego UX.
-          // Mogę spróbować jakoś to rozwiązać warunkami typu if humanLiberated = true i dodać do languageButton.
-
           humanQuestion.forEach(el => {
             el.style.display = "none";
           });
 
           history.style.display = "block";
+          setLang(currentLang);
         });
       });
+      
+
+
+
     </script>
   </body>
 </html>
