@@ -4,7 +4,7 @@
 
 Bardzo prosty projekt, utrzymany w minimalistycznym stylu, jednak funkcjonalny, niosący ważny przekaz dający do myślenia wszystkim przeciwnikom szowinizmu.
 
-Projekt jest dostępny w języku angielskim. Polska wersja językowa ukaże się niebawem.
+Projekt jest dostępny w języku angielskim i polskim. Język można zmienić za pomocą przełącznika znajdującego się w prawym górnym rogu strony.
 
 ## Uruchomienie
 
@@ -14,7 +14,8 @@ Strona jest dostępna live pod adresem: [https://racism.wtf](https://racism.wtf)
 
 - HTML – struktura strony.
 - CSS – proste style, które podkreślają powagę tematu, bez zbędnych ozdobników, by nie odciągać uwagi od przekazu.
-- Vanilla JavaScript – prosty skrypt obsługujący przycisk, który po kliknięciu ujawnia dodatkową treść strony.
+- Vanilla JavaScript – skrypt obsługujący przełączanie języka oraz przycisk „Human Liberation”, który ujawnia wyjaśnienie dotyczące szowinizmu gatunkowego i pytanie historyczne.
+- Responsywność – układ dopasowuje się do różnych rozmiarów ekranów.
 - Domena została dobrana tak, aby sama w sobie była częścią przekazu.
 
 ### Licencja

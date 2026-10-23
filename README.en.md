@@ -4,6 +4,8 @@
 
 A very simple project, kept in a minimalist style, yet functional, carrying an important message that gives food for thought to all opponents of racism.
 
+The project is available in English and Polish. The language can be changed using the switcher in the top-right corner of the page.
+
 ## Deployment
 
 The site is available live at: [https://racism.wtf](https://racism.wtf)
@@ -12,7 +14,8 @@ The site is available live at: [https://racism.wtf](https://racism.wtf)
 
 - HTML5 – the structure of the page.
 - CSS3 – simple styles that emphasize the seriousness of the topic, without unnecessary decorations, so as not to distract from the message.
-- Vanilla JavaScript – a simple script handling the button that, when clicked, reveals additional content on the page.
+- Vanilla JavaScript – a script handling language switching and the “Human Liberation” button, which reveals an explanation of speciesism and a historical question.
+- Responsive layout – the page adapts to different screen sizes.
 - Domain – chosen so that it itself becomes part of the message.
 
 ### License
