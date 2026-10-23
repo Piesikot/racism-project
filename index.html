@@ -799,7 +799,7 @@
       </div>
 
       <div lang="pl" class="speciesism-explanation">
-        W rzeczywistości te argumenty odzwierciedlają najczęściej używane
+        Tak naprawdę, te argumenty odzwierciedlają najczęściej używane
         argumenty szowinistów gatunkowych przeciwko weganizmowi, w których
         słowo „zwierzęta” zostało zastąpione słowami „inne rasy”. Poprzez
         ukazanie podobieństw między rasizmem a szowinizmem gatunkowym celem
@@ -811,14 +811,31 @@
 
 
       <div class="history-question-container">
-         <h2 class="history-question__title">
+         <h2 lang="en" class="history-question__title">
           On which side of world history do you think you would have stood 200 years ago, when human slavery was being abolished? On the side of the oppressors who owned slaves, or on the side of the victims and the abolitionists fighting for human rights?
           </h2>
-         <span class="history-question__description">
-          In the first half of the 19th century, around 2% of the population supported the abolitionist movement. Although they began as minority groups, their influence grew over time. Today, a similar proportion of people are abolitionist vegans, opposing the enslavement of animals. Do you think you would have stood on the right side of history back then?
-          <span class="history-question__explanation">
-          Your attitude toward the exploitation of animals today reveals which side you would have chosen just two centuries ago
-          </span>.
+          <h2  lang="pl" class="history-question__title">
+          Po której stronie historii świata, jak sądzisz, stanąłbyś 200 lat temu,
+          gdy znoszono niewolnictwo? Po stronie ciemiężycieli posiadających niewolników,
+          czy po stronie ofiar i abolicjonistów walczących o prawa człowieka?
+          </h2>
+
+          <span lang="en" class="history-question__description">
+            In the first half of the 19th century, around 2% of the population supported the abolitionist movement. Although they began as minority groups, their influence grew over time. Today, a similar proportion of people are abolitionist vegans, opposing the enslavement of animals. Do you think you would have stood on the right side of history back then?
+            <span class="history-question__explanation">
+              In reality, your attitude toward the exploitation of animals today reveals which side you truly would have chosen just two centuries ago.
+            </span>
+          </span>
+          <span lang="pl" class="history-question__description">
+            W pierwszej połowie XIX wieku około 2% społeczeństwa popierało ruch
+            abolicjonistyczny. Choć zaczynali jako grupa mniejszościowa, ich wpływ
+            stopniowo rósł. Dziś podobny odsetek ludzi to weganie‑abolicjoniści,
+            sprzeciwiający się zniewalaniu zwierząt. Jak sądzisz — czy wtedy stanąłbyś po
+            właściwej stronie historii?
+            <span class="history-question__explanation">
+              W rzeczywistości, twoje dzisiejsze podejście do wykorzystywania zwierząt ujawnia, po której stronie tak naprwawdę stanąłbyś dwieście lat temu.
+            </span>
+          </span>
 
           <!-- <span class="history-question__question">
             So which side will you choose now: <button class="animal_liberation">Animal liberation</button> or <button class="animal_liberation">Animal enslavement</button> ?
@@ -861,6 +878,10 @@
       const speciesismExplanation = document.querySelectorAll(
           ".speciesism-explanation"
         );
+      const historyQuestionElements = document.querySelectorAll(
+        ".history-question__title, " +
+        ".history-question__description"
+      );
       function setLang(lang) {
 
         if (lang === 'en') {  
@@ -890,6 +911,15 @@
         });
 
         speciesismExplanation.forEach(el => {
+          if (humanLiberationButtonClicked &&
+              el.getAttribute("lang") === lang) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        });
+
+        historyQuestionElements.forEach(el => {
           if (humanLiberationButtonClicked &&
               el.getAttribute("lang") === lang) {
             el.style.display = "block";
